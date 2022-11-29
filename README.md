@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/Mandariini/COMP.SE.200_project/badge.svg?branch=github_actions_tests)](https://coveralls.io/github/Mandariini/COMP.SE.200_project?branch=github_actions_tests)
+
 # Student template
 
 ## Purpose of this repository

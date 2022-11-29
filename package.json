@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "mocha",
-    "coverage": "c8 mocha"
+    "coverage": "c8 --all --exclude src/.internal --exclude test mocha",
+    "coveralls": "c8 --all --exclude src/.internal --exclude test report --reporter=text-lcov > coverage/lcov.info"
   },
   "author": "",
   "license": "MIT",

@@ -1,10 +1,9 @@
-name: build and run tests
+name: Run all tests
 
 on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -12,10 +11,18 @@ jobs:
         node-version: [15.x]
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
-      - run: npm test
+      - run: npm run coverage
+      - run: npm run coveralls
+
+      - name: Publish to Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
