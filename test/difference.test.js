@@ -94,15 +94,18 @@ describe('difference', () => {
         output = difference(arrayToInspect, exclusionArray);
         expect(output).deep.to.equal(expectedOutput);
 
-        arrayToInspect = [Symbol('foo')];
-        exclusionArray = [Symbol('bar')];
-        expectedOutput = [Symbol('foo')];
+        const symbol1 = Symbol('foo');
+        const symbol2 = Symbol('bar');
+
+        arrayToInspect = [symbol1];
+        exclusionArray = [symbol2];
+        expectedOutput = [symbol1];
 
         output = difference(arrayToInspect, exclusionArray);
         expect(output).deep.to.equal(expectedOutput);
 
-        arrayToInspect = [Symbol('foo')];
-        exclusionArray = [Symbol('foo')];
+        arrayToInspect = [symbol2];
+        exclusionArray = [symbol2];
         expectedOutput = [];
 
         output = difference(arrayToInspect, exclusionArray);
@@ -133,5 +136,14 @@ describe('difference', () => {
 
         output = difference(arrayToInspect, exclusionArray, exclusionArray);
         assert(JSON.stringify(expectedOutput) !== JSON.stringify(output), "objects are equal");
+    })
+
+    it('test non-array', () => {
+        const integer1 = 1;
+        const exclusionArray = [1];
+        const expectedOutput = [];
+
+        const output = difference(integer1, exclusionArray);
+        expect(output).deep.to.equal(expectedOutput);
     })
 })
