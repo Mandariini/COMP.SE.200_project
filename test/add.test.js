@@ -45,4 +45,11 @@ describe('add', () => {
         expect(add(-0.2222, undefined)).to.equal(-0.2222);
     })
 
+    it('addition with objects', () => {
+        const user1 = { 'user': 'barney', 'active': true };
+        const user2 = { 'user': 'fred', 'active': false };
+
+        expect(add(user1, user2)).to.be.NaN;
+    })
+
 })

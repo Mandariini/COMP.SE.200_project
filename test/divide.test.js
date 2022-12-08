@@ -25,10 +25,12 @@ describe('divide', () => {
         expect(divide(0.99, 0.28632)).to.be.approximately(3.45766974015, delta);
     })
 
-    it('division with null', () => {
+    it('division with null and undefined', () => {
         expect(divide(123.99, null)).to.equal(Infinity);
         expect(divide(null, 89789.777867868)).to.equal(0);
         expect(divide(null, null)).to.be.NaN;
+        expect(divide(9090, undefined)).to.equal(9090 / undefined);
+        expect(divide(undefined, 9090)).to.equal(undefined / 9090);
     })
 
     it('divions with strings', () => {
@@ -44,6 +46,12 @@ describe('divide', () => {
         expect(divide(0.000000001, 0.000000001)).to.equal(1);
         expect(divide(1.0, 0.0000000000000001)).to.equal(1e+16);
         expect(divide(0.0000000000000001, 0.909)).to.be.approximately(1.10011e-16, delta);
+    })
+
+    it('division by zero', () => {
+        expect(divide(1, 0)).to.equal(Infinity);
+        expect(divide(0, 0)).to.be.NaN;
+        expect(divide(-1, 0)).to.be.equal(-Infinity);
     })
 
 })

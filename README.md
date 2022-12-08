@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/github/Mandariini/COMP.SE.200_project/badge.svg?branch=master)](https://coveralls.io/github/Mandariini/COMP.SE.200_project?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/Mandariini/COMP.SE.200_project/badge.svg?branch=master&service=github)](https://coveralls.io/github/Mandariini/COMP.SE.200_project?branch=master)
 
 # Student template
 
