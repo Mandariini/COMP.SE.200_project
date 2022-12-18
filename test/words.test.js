@@ -28,7 +28,7 @@ describe('words', ()=>{
         const input2 = 'Archie has 3 dollars & 50 cents';
         const expectedOutput2 = ['Archie', 'has', '3', 'dollars', '&', '50', 'cents'];
 
-        const output2 = words(input2, /&+/g);
+        const output2 = words(input2, /[^, ]+/g);
         expect(output2).deep.to.equal(expectedOutput2);
 
     })
@@ -37,7 +37,8 @@ describe('words', ()=>{
         const input = '';
 
         const output = words(input);
-        expect(output).to.equal([]);
+        const expected = [];
+        expect(output).to.equal(expected);
 
     })
 
