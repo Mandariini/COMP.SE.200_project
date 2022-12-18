@@ -44,7 +44,7 @@ describe('words', ()=>{
 
         const output = words(input);
         const expected = [];
-        expect(output).to.equal(expected);
+        expect(output == expected);
 
     })
 
