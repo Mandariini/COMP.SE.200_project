@@ -4,7 +4,7 @@ import isEmpty from '../src/isEmpty.js'
 
 describe('isEmpty', ()=> {
 
-    it('test non container-variables', () => {
+    it('Check non container-variables', () => {
         
         expect(isEmpty(true) == true);
         expect(isEmpty(null) == true);
@@ -13,7 +13,7 @@ describe('isEmpty', ()=> {
 
     })
 
-    it('test strings', () => {
+    it('Check strings', () => {
         
         expect(isEmpty('Test') == false);
         expect(isEmpty('T') == false);
@@ -21,7 +21,7 @@ describe('isEmpty', ()=> {
 
     })    
     
-    it('test arrays', () => {
+    it('Check arrays', () => {
         
         const inputArray1 = ['Fred', 'plays', 'violin']
         expect(isEmpty(inputArray1) == false);
@@ -31,7 +31,7 @@ describe('isEmpty', ()=> {
 
     })
 
-    it('test maps and sets', () => {
+    it('Check maps and sets', () => {
         
         const mapTest = new Map();
         expect(isEmpty(mapTest) == true);

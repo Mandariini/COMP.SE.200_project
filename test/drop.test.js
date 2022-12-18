@@ -21,7 +21,7 @@ describe('drop', ()=>{
 
     })
 
-    it('drop everything from array by giving argument higher than array length', () => {
+    it('drop everything from array by giving argument higher than array\'s length', () => {
         const arrayToInspect = [1, "2", 3, "4", 5];
         const expectedOutput = [];
 
@@ -29,7 +29,7 @@ describe('drop', ()=>{
         expect(output).deep.to.equal(expectedOutput);
     })
 
-    it('drop everything from array by giving argument same as array length', () => {
+    it('drop everything from array by giving argument same as array\' length', () => {
         const arrayToInspect = [null, "2", Object('a'), "4", 5];
         const expectedOutput = [];
 

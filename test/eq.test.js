@@ -34,7 +34,7 @@ describe('eq', ()=>{
         expect(eq(NaN, undefined) == false);
 
     })
-    it('Compare Array with each other', ()=>{
+    it('Compare arrays with each other', ()=>{
         const original = ['1','2','3'];
         const array1 = ['1','2','3'];
         const array2 = ['1','2'];
